@@ -29,6 +29,11 @@ exports.utilities = {
             data: email
         }, 'zoho-manager', { expiresIn: 60 });
         return token;
+    }),
+    decodeToken: (token) => __awaiter(void 0, void 0, void 0, function* () {
+        console.log(token);
+        var decoded = jsonwebtoken_1.default.verify(token, 'zoho-manager');
+        return decoded;
     })
 };
 //# sourceMappingURL=utilities.js.map

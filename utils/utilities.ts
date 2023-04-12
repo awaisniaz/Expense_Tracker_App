@@ -14,5 +14,10 @@ export const utilities = {
             data: email
         }, 'zoho-manager', { expiresIn: 60 });
         return token
+    },
+    decodeToken: async (token: any) => {
+        console.log(token)
+        var decoded = jwt.verify(token, 'zoho-manager');
+        return decoded
     }
 }
