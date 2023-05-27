@@ -17,7 +17,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 main().catch(err => console.log(err));
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        yield mongoose_1.default.connect('mongodb://127.0.0.1:27017/jobboard-db');
+        yield mongoose_1.default.connect('mongodb://127.0.0.1:27017/Expense-Tracker');
     });
 }
 //# sourceMappingURL=db-connection.js.map

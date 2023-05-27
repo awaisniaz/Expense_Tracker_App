@@ -39,7 +39,4 @@ function startServer() {
     });
 }
 startServer();
-// app.use((req, res, next) => {
-//     res.status(200).send({ message: 'Api is not found in system' });
-// });
 //# sourceMappingURL=index.js.map

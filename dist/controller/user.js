@@ -25,6 +25,9 @@ exports.user_controllers = {
             .then((data) => __awaiter(void 0, void 0, void 0, function* () {
             var _b, _c;
             console.log(data);
+            if (data == null) {
+                return { message: "User Does not exist" };
+            }
             const encodedPassowrd = yield (utilities_1.utilities === null || utilities_1.utilities === void 0 ? void 0 : utilities_1.utilities.encodePassword((_b = req === null || req === void 0 ? void 0 : req.body) === null || _b === void 0 ? void 0 : _b.password));
             const newUser = new user_model_1.default(Object.assign(Object.assign({}, req === null || req === void 0 ? void 0 : req.body), { password: encodedPassowrd }));
             (_c = newUser === null || newUser === void 0 ? void 0 : newUser.save()) === null || _c === void 0 ? void 0 : _c.then(data => {

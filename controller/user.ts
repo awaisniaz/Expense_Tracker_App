@@ -10,6 +10,9 @@ export const user_controllers = {
         User.findOne({ email: req?.body?.email })
             .then(async (data: any) => {
                 console.log(data)
+                if (data == null) {
+                    return { message: "User Does not exist" }
+                }
                 const encodedPassowrd = await utilities?.encodePassword(req?.body?.password)
                 const newUser = new User({ ...req?.body, password: encodedPassowrd })
                 newUser?.save()?.then(data => {
